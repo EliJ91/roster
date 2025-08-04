@@ -67,17 +67,32 @@ function AdminDashboard() {
         <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
           <h3>🗂️ Roster Management</h3>
           <p>Manage your rosters and teams</p>
-          <button style={{
-            background: '#3498db',
-            color: 'white',
-            border: 'none',
-            padding: '10px 15px',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            marginTop: '10px'
-          }}>
-            Create New Roster
-          </button>
+          <div style={{ display: 'flex', gap: '10px', marginTop: '10px', flexWrap: 'wrap' }}>
+            <Link 
+              to={`/${user.MID}/admin/createroster`}
+              style={{
+                background: '#3498db',
+                color: 'white',
+                border: 'none',
+                padding: '10px 15px',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                display: 'inline-block'
+              }}
+            >
+              Create New Roster
+            </Link>
+            <button style={{
+              background: '#e67e22',
+              color: 'white',
+              border: 'none',
+              padding: '10px 15px',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}>
+              Manage Rosters
+            </button>
+          </div>
         </div>
 
         <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>

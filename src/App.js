@@ -4,6 +4,7 @@ import { UserProvider, useUser } from './context/UserContext';
 import TopBar from './components/TopBar';
 import AdminDashboard from './components/AdminDashboard';
 import UserManagement from './components/UserManagement';
+import CreateRoster from './components/CreateRoster';
 import LiveRoster from './components/LiveRoster';
 import './App.css';
 
@@ -52,6 +53,17 @@ function AppContent() {
             element={
               isLoggedIn ? 
                 <UserManagement /> : 
+                <div style={{ padding: '20px', textAlign: 'center' }}>
+                  <h2>Access Restricted</h2>
+                  <p>Please sign in to access admin area</p>
+                </div>
+            } 
+          />
+          <Route 
+            path="/:mid/admin/createroster" 
+            element={
+              isLoggedIn ? 
+                <CreateRoster /> : 
                 <div style={{ padding: '20px', textAlign: 'center' }}>
                   <h2>Access Restricted</h2>
                   <p>Please sign in to access admin area</p>
