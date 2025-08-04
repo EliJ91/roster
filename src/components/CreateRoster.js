@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useUser } from '../context/UserContext';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { db } from '../firebase/config';
 import { 
   collection, 
@@ -12,6 +12,7 @@ import {
 
 function CreateRoster() {
   const { user } = useUser();
+  const location = useLocation();
   const [sections, setSections] = useState([
     { id: 1, label: 'Option 1', options: '', categoryType: 'none', subLabel: '', isTextArea: false }
   ]);
@@ -30,9 +31,51 @@ function CreateRoster() {
   const [draggedEntryIndex, setDraggedEntryIndex] = useState(null);
   const [rosterId, setRosterId] = useState(null); // Track if editing existing roster
 
+  // Load roster data if editing
+  useEffect(() => {
+    if (location.state?.editRoster) {
+      const roster = location.state.editRoster;
+      loadRosterData(roster);
+    }
+  }, [location.state]);
+
   if (!user) {
     return <div>Loading...</div>;
   }
+
+  // Function to load roster data for editing
+  const loadRosterData = (roster) => {
+    try {
+      // Load basic information
+      setRosterName(roster.name || '');
+      setRosterId(roster.rosterId);
+      
+      // Load option configuration
+      if (roster.optionData) {
+        setSections(roster.optionData.sections || []);
+        setCategoryNames(roster.optionData.categoryNames || {
+          category1: 'Category 1',
+          category2: 'Category 2', 
+          category3: 'Category 3'
+        });
+        setEntryFields(roster.optionData.entryFields || []);
+      }
+      
+      // Load entries (sort by order to maintain drag-and-drop sequence)
+      const entries = roster.entries || [];
+      const sortedEntries = entries.sort((a, b) => (a.order || 0) - (b.order || 0));
+      setRosterEntries(sortedEntries.map(entry => {
+        // Remove metadata fields for display
+        const { order, entryId, ...displayEntry } = entry;
+        return displayEntry;
+      }));
+      
+      console.log('Roster loaded for editing:', roster);
+    } catch (error) {
+      console.error('Error loading roster data:', error);
+      alert('Error loading roster data. Please try again.');
+    }
+  };
 
   const updateLabel = (id, newLabel) => {
     setSections(sections.map(section => 

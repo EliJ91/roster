@@ -5,6 +5,7 @@ import TopBar from './components/TopBar';
 import AdminDashboard from './components/AdminDashboard';
 import UserManagement from './components/UserManagement';
 import CreateRoster from './components/CreateRoster';
+import ManageRosters from './components/ManageRosters';
 import LiveRoster from './components/LiveRoster';
 import './App.css';
 
@@ -60,10 +61,21 @@ function AppContent() {
             } 
           />
           <Route 
-            path="/:mid/admin/createroster" 
+            path="/:mid/admin/create-roster" 
             element={
               isLoggedIn ? 
                 <CreateRoster /> : 
+                <div style={{ padding: '20px', textAlign: 'center' }}>
+                  <h2>Access Restricted</h2>
+                  <p>Please sign in to access admin area</p>
+                </div>
+            } 
+          />
+          <Route 
+            path="/:mid/admin/manage-rosters" 
+            element={
+              isLoggedIn ? 
+                <ManageRosters /> : 
                 <div style={{ padding: '20px', textAlign: 'center' }}>
                   <h2>Access Restricted</h2>
                   <p>Please sign in to access admin area</p>

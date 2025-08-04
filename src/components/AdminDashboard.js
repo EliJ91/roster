@@ -69,7 +69,7 @@ function AdminDashboard() {
           <p>Manage your rosters and teams</p>
           <div style={{ display: 'flex', gap: '10px', marginTop: '10px', flexWrap: 'wrap' }}>
             <Link 
-              to={`/${user.MID}/admin/createroster`}
+              to={`/${user.MID}/admin/create-roster`}
               style={{
                 background: '#3498db',
                 color: 'white',
@@ -82,16 +82,20 @@ function AdminDashboard() {
             >
               Create New Roster
             </Link>
-            <button style={{
-              background: '#e67e22',
-              color: 'white',
-              border: 'none',
-              padding: '10px 15px',
-              borderRadius: '4px',
-              cursor: 'pointer'
-            }}>
+            <Link 
+              to={`/${user.MID}/admin/manage-rosters`}
+              style={{
+                background: '#e67e22',
+                color: 'white',
+                border: 'none',
+                padding: '10px 15px',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                display: 'inline-block'
+              }}
+            >
               Manage Rosters
-            </button>
+            </Link>
           </div>
         </div>
 
