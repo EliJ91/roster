@@ -123,7 +123,7 @@ function UserManagement() {
   };
 
   const getRoleDisplay = (roleLevel) => {
-    if (roleLevel >= 99) return 'Super Admin';
+    if (roleLevel >= 99) return 'Creator';
     if (roleLevel >= 98) return 'Admin';
     if (roleLevel >= 97) return 'Moderator';
     return 'User';
