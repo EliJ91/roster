@@ -1,0 +1,2962 @@
+// Status 200 (dns:66.5ms,tcp:37.39999997615814ms,req:268.5999999642372ms,res:1.800000011920929ms)
+// serverTiming: [{"name":"cfCacheStatus","duration":0,"description":"DYNAMIC"},{"name":"cfOrigin","duration":129,"description":""},{"name":"cfEdge","duration":126,"description":""}]
+[
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "0hGang",
+    "Id": "qiQWu3a8TbSrgSdTdVwApA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": null,
+    "AllianceId": "",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_01",
+    "AvatarRing": "RING1",
+    "DeathFame": 0,
+    "KillFame": 0,
+    "FameRatio": 0.00,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0,
+        "Hellgate": 0,
+        "CorruptedDungeon": 0,
+        "Mists": 0
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": null
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "DickMyaz",
+    "Id": "qh0UgU4iQz-AQVzdwGr5-g",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 677433090,
+    "KillFame": 461152044,
+    "FameRatio": 0.68,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 491051871,
+        "Royal": 2094083,
+        "Outlands": 110036075,
+        "Avalon": 244153120,
+        "Hellgate": 26605591,
+        "CorruptedDungeon": 16035892,
+        "Mists": 18902067
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 383059,
+          "Royal": 4909,
+          "Outlands": 54136,
+          "Avalon": 315312
+        },
+        "Hide": {
+          "Total": 334326,
+          "Royal": 39150,
+          "Outlands": 34794,
+          "Avalon": 239796
+        },
+        "Ore": {
+          "Total": 141291,
+          "Royal": 311,
+          "Outlands": 4018,
+          "Avalon": 134977
+        },
+        "Rock": {
+          "Total": 18067,
+          "Royal": 123,
+          "Outlands": 179,
+          "Avalon": 17764
+        },
+        "Wood": {
+          "Total": 7314,
+          "Royal": 304,
+          "Outlands": 0,
+          "Avalon": 6996
+        },
+        "All": {
+          "Total": 884057,
+          "Royal": 44797,
+          "Outlands": 93127,
+          "Avalon": 714845
+        }
+      },
+      "Crafting": {
+        "Total": 316698240,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 172771,
+      "FarmingFame": 2055800,
+      "Timestamp": "2025-07-22T02:52:42.364231Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "TyroneBigg0ms",
+    "Id": "eEYkmS5uTSOwGEcOq4Do6A",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "AVATAR_08",
+    "AvatarRing": "RING1",
+    "DeathFame": 13873333,
+    "KillFame": 45036884,
+    "FameRatio": 3.25,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 11665161,
+        "Royal": 488,
+        "Outlands": 8832349,
+        "Avalon": 237963,
+        "Hellgate": 0,
+        "CorruptedDungeon": 0,
+        "Mists": 8727
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 40,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 67,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 40,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 67,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 214,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 2789022,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-23T02:49:16.856355Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Whodatkid13",
+    "Id": "0fUhA-m-QmmWkjt5J-ZV0A",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 68088115,
+    "KillFame": 49233692,
+    "FameRatio": 0.72,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 204898127,
+        "Royal": 12368328,
+        "Outlands": 112999510,
+        "Avalon": 46937324,
+        "Hellgate": 1156133,
+        "CorruptedDungeon": 1761541,
+        "Mists": 5511304
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 242254,
+          "Royal": 62587,
+          "Outlands": 53321,
+          "Avalon": 68453
+        },
+        "Hide": {
+          "Total": 205057,
+          "Royal": 54352,
+          "Outlands": 53354,
+          "Avalon": 65352
+        },
+        "Ore": {
+          "Total": 145491,
+          "Royal": 36208,
+          "Outlands": 32327,
+          "Avalon": 54065
+        },
+        "Rock": {
+          "Total": 576,
+          "Royal": 576,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 79060,
+          "Royal": 15540,
+          "Outlands": 6411,
+          "Avalon": 35932
+        },
+        "All": {
+          "Total": 672438,
+          "Royal": 169263,
+          "Outlands": 145413,
+          "Avalon": 223802
+        }
+      },
+      "Crafting": {
+        "Total": 209048341,
+        "Royal": 753,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 26900,
+      "Timestamp": "2025-07-23T02:49:18.262414Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Bluejeans07ttv",
+    "Id": "Ch9iJjZuTRaErd5rKZ6fFQ",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 71491606,
+    "KillFame": 105647371,
+    "FameRatio": 1.48,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 305811557,
+        "Royal": 3363553,
+        "Outlands": 53959126,
+        "Avalon": 6866861,
+        "Hellgate": 3430288,
+        "CorruptedDungeon": 34939,
+        "Mists": 72488944
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 13,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 40,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 9,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 13,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 75,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 301265,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 1540,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-18T03:34:51.044590Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "HPlamp",
+    "Id": "8vWpa-UIQwevKSeVBkfYwA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_05",
+    "AvatarRing": "RING1",
+    "DeathFame": 152568393,
+    "KillFame": 104847195,
+    "FameRatio": 0.69,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 1240996514,
+        "Royal": 21160024,
+        "Outlands": 382615496,
+        "Avalon": 223133740,
+        "Hellgate": 673550,
+        "CorruptedDungeon": 568062,
+        "Mists": 6442188
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 51251,
+          "Royal": 25032,
+          "Outlands": 6136,
+          "Avalon": 11625
+        },
+        "Hide": {
+          "Total": 21449,
+          "Royal": 13395,
+          "Outlands": 1508,
+          "Avalon": 279
+        },
+        "Ore": {
+          "Total": 272699,
+          "Royal": 92514,
+          "Outlands": 144332,
+          "Avalon": 22245
+        },
+        "Rock": {
+          "Total": 5184,
+          "Royal": 3457,
+          "Outlands": 721,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 1066,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 351649,
+          "Royal": 134398,
+          "Outlands": 152697,
+          "Avalon": 34149
+        }
+      },
+      "Crafting": {
+        "Total": 89793797,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 698090,
+      "FarmingFame": 485900,
+      "Timestamp": "2025-07-22T02:52:40.409453Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "DoobleNod",
+    "Id": "uy7cCckQTgWz2H6SsrJDiw",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": null,
+    "AllianceId": "",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 332730925,
+    "KillFame": 337947054,
+    "FameRatio": 1.02,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 204113961,
+        "Royal": 1222169,
+        "Outlands": 88735194,
+        "Avalon": 1973617,
+        "Hellgate": 14552485,
+        "CorruptedDungeon": 3219484,
+        "Mists": 222570
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 49,
+          "Royal": 27,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 427179,
+          "Royal": 40993,
+          "Outlands": 337985,
+          "Avalon": 48165
+        },
+        "Ore": {
+          "Total": 14247,
+          "Royal": 11109,
+          "Outlands": 3007,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 4590,
+          "Royal": 67,
+          "Outlands": 4522,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 3478,
+          "Royal": 171,
+          "Outlands": 3253,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 449543,
+          "Royal": 52367,
+          "Outlands": 348767,
+          "Avalon": 48165
+        }
+      },
+      "Crafting": {
+        "Total": 13253792,
+        "Royal": 1314,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 27654,
+      "FishingFame": 352329,
+      "FarmingFame": 187900,
+      "Timestamp": "2025-06-03T02:25:08.690239Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "ripped69",
+    "Id": "6WMSfETMTou4EnsCwoEB8A",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 62746214,
+    "KillFame": 109839474,
+    "FameRatio": 1.75,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 152433544,
+        "Royal": 9381,
+        "Outlands": 35703273,
+        "Avalon": 9748,
+        "Hellgate": 209758,
+        "CorruptedDungeon": 0,
+        "Mists": 6344069
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 13,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 13,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 1519,
+          "Royal": 1452,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 76,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 1621,
+          "Royal": 1452,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 17417809,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 4290,
+      "FarmingFame": 17754400,
+      "Timestamp": "2025-07-21T02:48:40.595601Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "SukMlkeHawk",
+    "Id": "o6vQvwJFTx6vpGaZyjXiJg",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 20984153,
+    "KillFame": 23537064,
+    "FameRatio": 1.12,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 54402406,
+        "Royal": 2091877,
+        "Outlands": 30987114,
+        "Avalon": 7331417,
+        "Hellgate": 765101,
+        "CorruptedDungeon": 0,
+        "Mists": 340756
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 40,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 27,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 54,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 63,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 184,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 10877782,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 440,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-18T03:34:51.202589Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "TvolBro",
+    "Id": "HNPgYtnmQtaf03URU5AaGA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 16854346,
+    "KillFame": 17224793,
+    "FameRatio": 1.02,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 341571168,
+        "Royal": 206331,
+        "Outlands": 47214,
+        "Avalon": 0,
+        "Hellgate": 341316876,
+        "CorruptedDungeon": 0,
+        "Mists": 0
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 81,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 27,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 40,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 94,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 242,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 339,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-19T02:48:45.650224Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "K1ngBarber",
+    "Id": "_yg7IhFtTXuxP9j7SSJIqQ",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "AVATAR_02",
+    "AvatarRing": "RING1",
+    "DeathFame": 45546,
+    "KillFame": 17520,
+    "FameRatio": 0.38,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0,
+        "Hellgate": 0,
+        "CorruptedDungeon": 0,
+        "Mists": 0
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": null
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "TotallyNotDeain",
+    "Id": "NX6LNHXNSaaW--S1yL5DKA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "AVATAR_06",
+    "AvatarRing": "AVATARRING_CHARITY_MARCH2020",
+    "DeathFame": 108393556,
+    "KillFame": 97758275,
+    "FameRatio": 0.90,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 6484057,
+        "Royal": 86412,
+        "Outlands": 5317671,
+        "Avalon": 26182,
+        "Hellgate": 29144,
+        "CorruptedDungeon": 0,
+        "Mists": 0
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 1228,
+          "Royal": 1116,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 63,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 94,
+          "Royal": 94,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 63,
+          "Royal": 13,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 135,
+          "Royal": 94,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 1583,
+          "Royal": 1317,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 12197754,
+        "Royal": 19,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 180,
+      "FarmingFame": 0,
+      "Timestamp": "2025-06-21T02:28:52.719479Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "D3CE1T",
+    "Id": "nnfnLCsCQHat6czqBp6ajA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 260560663,
+    "KillFame": 239876466,
+    "FameRatio": 0.92,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 3480595126,
+        "Royal": 19883297,
+        "Outlands": 1970618680,
+        "Avalon": 146208152,
+        "Hellgate": 9059417,
+        "CorruptedDungeon": 2508257,
+        "Mists": 7672742
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 2722,
+          "Royal": 1518,
+          "Outlands": 318,
+          "Avalon": 789
+        },
+        "Hide": {
+          "Total": 9281,
+          "Royal": 6921,
+          "Outlands": 137,
+          "Avalon": 1245
+        },
+        "Ore": {
+          "Total": 17253,
+          "Royal": 6661,
+          "Outlands": 7876,
+          "Avalon": 2479
+        },
+        "Rock": {
+          "Total": 3872,
+          "Royal": 2495,
+          "Outlands": 837,
+          "Avalon": 460
+        },
+        "Wood": {
+          "Total": 5341,
+          "Royal": 4833,
+          "Outlands": 45,
+          "Avalon": 359
+        },
+        "All": {
+          "Total": 38469,
+          "Royal": 22428,
+          "Outlands": 9213,
+          "Avalon": 5332
+        }
+      },
+      "Crafting": {
+        "Total": 47210840,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 153205,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-23T02:49:18.230087Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "ElderFaith",
+    "Id": "dNQXAZ-2RJOQTRaPj8lwCQ",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": null,
+    "AllianceId": "",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 110187493,
+    "KillFame": 171694956,
+    "FameRatio": 1.56,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 363111678,
+        "Royal": 3015390,
+        "Outlands": 104681447,
+        "Avalon": 156348527,
+        "Hellgate": 1072671,
+        "CorruptedDungeon": 146030,
+        "Mists": 3863114
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 717869,
+          "Royal": 310,
+          "Outlands": 569728,
+          "Avalon": 110697
+        },
+        "Hide": {
+          "Total": 597641,
+          "Royal": 283,
+          "Outlands": 430027,
+          "Avalon": 147448
+        },
+        "Ore": {
+          "Total": 694410,
+          "Royal": 310,
+          "Outlands": 441837,
+          "Avalon": 201333
+        },
+        "Rock": {
+          "Total": 251217,
+          "Royal": 297,
+          "Outlands": 171191,
+          "Avalon": 49454
+        },
+        "Wood": {
+          "Total": 376246,
+          "Royal": 324,
+          "Outlands": 200905,
+          "Avalon": 116269
+        },
+        "All": {
+          "Total": 2637383,
+          "Royal": 1524,
+          "Outlands": 1813688,
+          "Avalon": 625201
+        }
+      },
+      "Crafting": {
+        "Total": 14378479,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 3930,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-08T03:59:16.303600Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "notAUX",
+    "Id": "niZnPWE0TgyCVsVf0zextA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": null,
+    "AllianceId": "",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 35237810,
+    "KillFame": 80249470,
+    "FameRatio": 2.28,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 110080102,
+        "Royal": 66057,
+        "Outlands": 102892256,
+        "Avalon": 2398878,
+        "Hellgate": 924763,
+        "CorruptedDungeon": 0,
+        "Mists": 508855
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 54,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 54,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 54,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 54,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 216,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 83912682,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 2540,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-18T03:34:45.073897Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "PO1LD3POCHE",
+    "Id": "ALMWWUs6Q5ekMjDddndMUA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 39431273,
+    "KillFame": 35243902,
+    "FameRatio": 0.89,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 219320604,
+        "Royal": 5545669,
+        "Outlands": 29426002,
+        "Avalon": 107434415,
+        "Hellgate": 2413448,
+        "CorruptedDungeon": 550382,
+        "Mists": 37446494
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 363681,
+          "Royal": 6455,
+          "Outlands": 119027,
+          "Avalon": 211329
+        },
+        "Hide": {
+          "Total": 319021,
+          "Royal": 9617,
+          "Outlands": 121449,
+          "Avalon": 159235
+        },
+        "Ore": {
+          "Total": 293655,
+          "Royal": 12221,
+          "Outlands": 51114,
+          "Avalon": 188609
+        },
+        "Rock": {
+          "Total": 372082,
+          "Royal": 12921,
+          "Outlands": 17776,
+          "Avalon": 314411
+        },
+        "Wood": {
+          "Total": 330115,
+          "Royal": 1098,
+          "Outlands": 39524,
+          "Avalon": 259421
+        },
+        "All": {
+          "Total": 1678554,
+          "Royal": 42312,
+          "Outlands": 348890,
+          "Avalon": 1133005
+        }
+      },
+      "Crafting": {
+        "Total": 1105144,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 76409,
+      "FarmingFame": 8400,
+      "Timestamp": "2025-07-18T03:34:50.601556Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Doge2k",
+    "Id": "nMfs0VT4TgWMUvpiFdNyXA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 713681637,
+    "KillFame": 874969200,
+    "FameRatio": 1.23,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 486710291,
+        "Royal": 1465080,
+        "Outlands": 13390390,
+        "Avalon": 5934025,
+        "Hellgate": 342165087,
+        "CorruptedDungeon": 3919620,
+        "Mists": 508658
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 23290,
+          "Royal": 1770,
+          "Outlands": 21457,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 13,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 370553,
+          "Royal": 32514,
+          "Outlands": 298028,
+          "Avalon": 39975
+        },
+        "Rock": {
+          "Total": 312933,
+          "Royal": 93873,
+          "Outlands": 219060,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 1003,
+          "Royal": 963,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 707792,
+          "Royal": 129120,
+          "Outlands": 538545,
+          "Avalon": 39975
+        }
+      },
+      "Crafting": {
+        "Total": 82059587,
+        "Royal": 0,
+        "Outlands": 112580,
+        "Avalon": 0
+      },
+      "CrystalLeague": 29312734,
+      "FishingFame": 12075,
+      "FarmingFame": 416300,
+      "Timestamp": "2025-01-19T02:06:19.923185Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "KooRR",
+    "Id": "x6WHtrAvTKKW9rwv7OckCQ",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 76361547,
+    "KillFame": 117162249,
+    "FameRatio": 1.53,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 704925163,
+        "Royal": 26636222,
+        "Outlands": 471512174,
+        "Avalon": 49559697,
+        "Hellgate": 119608602,
+        "CorruptedDungeon": 0,
+        "Mists": 8402250
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 37547,
+          "Royal": 12390,
+          "Outlands": 21005,
+          "Avalon": 3246
+        },
+        "Hide": {
+          "Total": 38789,
+          "Royal": 12893,
+          "Outlands": 17197,
+          "Avalon": 6861
+        },
+        "Ore": {
+          "Total": 36169,
+          "Royal": 6370,
+          "Outlands": 29416,
+          "Avalon": 180
+        },
+        "Rock": {
+          "Total": 46405,
+          "Royal": 22219,
+          "Outlands": 18397,
+          "Avalon": 5616
+        },
+        "Wood": {
+          "Total": 25468,
+          "Royal": 5452,
+          "Outlands": 17644,
+          "Avalon": 2065
+        },
+        "All": {
+          "Total": 184378,
+          "Royal": 59324,
+          "Outlands": 103659,
+          "Avalon": 17968
+        }
+      },
+      "Crafting": {
+        "Total": 10814571,
+        "Royal": 5332,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 6930,
+      "FarmingFame": 1282000,
+      "Timestamp": "2025-05-08T02:26:58.301779Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "ToperousseQc",
+    "Id": "ySAlS6MKTiSsOgvG8xocKQ",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_04",
+    "AvatarRing": "RING1",
+    "DeathFame": 271434539,
+    "KillFame": 221945570,
+    "FameRatio": 0.82,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 223283135,
+        "Royal": 757326,
+        "Outlands": 74140614,
+        "Avalon": 97380540,
+        "Hellgate": 32466855,
+        "CorruptedDungeon": 11051,
+        "Mists": 5248927
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 606876,
+          "Royal": 3610,
+          "Outlands": 428455,
+          "Avalon": 150995
+        },
+        "Hide": {
+          "Total": 351012,
+          "Royal": 4720,
+          "Outlands": 212802,
+          "Avalon": 114519
+        },
+        "Ore": {
+          "Total": 1267300,
+          "Royal": 5075,
+          "Outlands": 958875,
+          "Avalon": 243033
+        },
+        "Rock": {
+          "Total": 63754,
+          "Royal": 7611,
+          "Outlands": 49743,
+          "Avalon": 6399
+        },
+        "Wood": {
+          "Total": 417386,
+          "Royal": 3595,
+          "Outlands": 224273,
+          "Avalon": 171360
+        },
+        "All": {
+          "Total": 2706328,
+          "Royal": 24611,
+          "Outlands": 1874148,
+          "Avalon": 686306
+        }
+      },
+      "Crafting": {
+        "Total": 7099528,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 372200,
+      "Timestamp": "2025-07-23T02:49:17.012352Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Dominatingurmom",
+    "Id": "4h6Q66FPSEGmupaEaQw_qA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 31919290,
+    "KillFame": 61006061,
+    "FameRatio": 1.91,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 1286245,
+        "Royal": 5889,
+        "Outlands": 869914,
+        "Avalon": 3859,
+        "Hellgate": 36613,
+        "CorruptedDungeon": 0,
+        "Mists": 10737
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 1420,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-19T02:48:45.413447Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "elcubain",
+    "Id": "csR6sxADRg6L0u1NPJwhgA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "AVATAR_03",
+    "AvatarRing": "RING1",
+    "DeathFame": 217497264,
+    "KillFame": 230532801,
+    "FameRatio": 1.06,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 454409038,
+        "Royal": 27314934,
+        "Outlands": 85413866,
+        "Avalon": 258218028,
+        "Hellgate": 9993148,
+        "CorruptedDungeon": 1786604,
+        "Mists": 25261037
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 207935,
+          "Royal": 58060,
+          "Outlands": 65613,
+          "Avalon": 57071
+        },
+        "Hide": {
+          "Total": 76393,
+          "Royal": 14165,
+          "Outlands": 14481,
+          "Avalon": 44916
+        },
+        "Ore": {
+          "Total": 202549,
+          "Royal": 27628,
+          "Outlands": 55612,
+          "Avalon": 105059
+        },
+        "Rock": {
+          "Total": 55564,
+          "Royal": 37104,
+          "Outlands": 9,
+          "Avalon": 18027
+        },
+        "Wood": {
+          "Total": 89280,
+          "Royal": 15160,
+          "Outlands": 10370,
+          "Avalon": 53496
+        },
+        "All": {
+          "Total": 631721,
+          "Royal": 152117,
+          "Outlands": 146085,
+          "Avalon": 278569
+        }
+      },
+      "Crafting": {
+        "Total": 12463407,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 14000,
+      "FarmingFame": 62700,
+      "Timestamp": "2025-07-22T02:52:41.913341Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Verlaine",
+    "Id": "TBPmGjs3SRCoYI27oPUyhw",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 879406853,
+    "KillFame": 1058171564,
+    "FameRatio": 1.20,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 426795690,
+        "Royal": 12399358,
+        "Outlands": 72182247,
+        "Avalon": 80073209,
+        "Hellgate": 47738056,
+        "CorruptedDungeon": 91597924,
+        "Mists": 68512092
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 9805,
+          "Royal": 6724,
+          "Outlands": 2423,
+          "Avalon": 112
+        },
+        "Hide": {
+          "Total": 2777,
+          "Royal": 2217,
+          "Outlands": 20,
+          "Avalon": 157
+        },
+        "Ore": {
+          "Total": 204412,
+          "Royal": 76120,
+          "Outlands": 100693,
+          "Avalon": 26407
+        },
+        "Rock": {
+          "Total": 68551,
+          "Royal": 10324,
+          "Outlands": 43647,
+          "Avalon": 14445
+        },
+        "Wood": {
+          "Total": 2688,
+          "Royal": 828,
+          "Outlands": 1581,
+          "Avalon": 45
+        },
+        "All": {
+          "Total": 288233,
+          "Royal": 96213,
+          "Outlands": 148364,
+          "Avalon": 41166
+        }
+      },
+      "Crafting": {
+        "Total": 73272412,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 233325,
+      "FishingFame": 236030,
+      "FarmingFame": 20300,
+      "Timestamp": "2025-07-21T02:48:39.107732Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "L0RDBARBER",
+    "Id": "1WqfcUCXSd-CgBEwVz54rA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_11",
+    "AvatarRing": "RING1",
+    "DeathFame": 5972924,
+    "KillFame": 1669816,
+    "FameRatio": 0.28,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0,
+        "Hellgate": 0,
+        "CorruptedDungeon": 0,
+        "Mists": 0
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": null
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "jeusq",
+    "Id": "ap7Nmn_wQlu7xJ65vcnwoQ",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_01",
+    "AvatarRing": "RING1",
+    "DeathFame": 16857606,
+    "KillFame": 19965999,
+    "FameRatio": 1.18,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 20811350,
+        "Royal": 35687,
+        "Outlands": 3121719,
+        "Avalon": 2423146,
+        "Hellgate": 8586086,
+        "CorruptedDungeon": 0,
+        "Mists": 3837
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 135436544,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 260,
+      "FarmingFame": 0,
+      "Timestamp": "2024-02-25T01:39:06.497218Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "matKearn",
+    "Id": "Qdr-uWshQbejmGsbooH0lw",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 256313174,
+    "KillFame": 288790652,
+    "FameRatio": 1.13,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 740633915,
+        "Royal": 11447802,
+        "Outlands": 111712806,
+        "Avalon": 373452875,
+        "Hellgate": 15298289,
+        "CorruptedDungeon": 1087996,
+        "Mists": 185422818
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 226373,
+          "Royal": 22785,
+          "Outlands": 51216,
+          "Avalon": 127249
+        },
+        "Hide": {
+          "Total": 237895,
+          "Royal": 22707,
+          "Outlands": 59243,
+          "Avalon": 130357
+        },
+        "Ore": {
+          "Total": 410198,
+          "Royal": 22829,
+          "Outlands": 90364,
+          "Avalon": 257388
+        },
+        "Rock": {
+          "Total": 26879,
+          "Royal": 24879,
+          "Outlands": 0,
+          "Avalon": 1905
+        },
+        "Wood": {
+          "Total": 297446,
+          "Royal": 10348,
+          "Outlands": 35612,
+          "Avalon": 209037
+        },
+        "All": {
+          "Total": 1198791,
+          "Royal": 103548,
+          "Outlands": 236435,
+          "Avalon": 725936
+        }
+      },
+      "Crafting": {
+        "Total": 14553305,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 7042,
+      "FarmingFame": 226100,
+      "Timestamp": "2025-07-21T02:48:40.478977Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "WhiteWalkers69",
+    "Id": "nzdhTYMlQ6uy8rfUWrVupw",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_05",
+    "AvatarRing": "RING1",
+    "DeathFame": 15023455,
+    "KillFame": 23618617,
+    "FameRatio": 1.57,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 280530187,
+        "Royal": 4330,
+        "Outlands": 204821033,
+        "Avalon": 3270867,
+        "Hellgate": 0,
+        "CorruptedDungeon": 0,
+        "Mists": 382729
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 439,
+          "Royal": 439,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 450,
+          "Royal": 450,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 889,
+          "Royal": 889,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 2560248,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-22T02:52:41.279601Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Frennouille",
+    "Id": "0_4f2vQTRViK8aHV9sB7LA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 443684718,
+    "KillFame": 365962800,
+    "FameRatio": 0.82,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 602523394,
+        "Royal": 11722710,
+        "Outlands": 128378313,
+        "Avalon": 237211650,
+        "Hellgate": 38883116,
+        "CorruptedDungeon": 2788755,
+        "Mists": 156063005
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 12415,
+          "Royal": 2361,
+          "Outlands": 1733,
+          "Avalon": 8086
+        },
+        "Hide": {
+          "Total": 25469,
+          "Royal": 3482,
+          "Outlands": 15591,
+          "Avalon": 5009
+        },
+        "Ore": {
+          "Total": 196959,
+          "Royal": 5453,
+          "Outlands": 108881,
+          "Avalon": 75268
+        },
+        "Rock": {
+          "Total": 4985,
+          "Royal": 639,
+          "Outlands": 762,
+          "Avalon": 3529
+        },
+        "Wood": {
+          "Total": 9455,
+          "Royal": 3054,
+          "Outlands": 5168,
+          "Avalon": 1032
+        },
+        "All": {
+          "Total": 249283,
+          "Royal": 14989,
+          "Outlands": 132135,
+          "Avalon": 92924
+        }
+      },
+      "Crafting": {
+        "Total": 15793787,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 384053,
+      "FarmingFame": 2461600,
+      "Timestamp": "2025-07-23T02:49:17.914104Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "xSaf",
+    "Id": "yj6VCiucQlaG89T8TfOdNg",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_07",
+    "AvatarRing": "RING1",
+    "DeathFame": 99779401,
+    "KillFame": 156722897,
+    "FameRatio": 1.57,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 481748468,
+        "Royal": 22399689,
+        "Outlands": 335222809,
+        "Avalon": 23273344,
+        "Hellgate": 3112270,
+        "CorruptedDungeon": 822962,
+        "Mists": 7726385
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 34795,
+          "Royal": 6312,
+          "Outlands": 27368,
+          "Avalon": 540
+        },
+        "Hide": {
+          "Total": 5694,
+          "Royal": 9,
+          "Outlands": 5253,
+          "Avalon": 381
+        },
+        "Ore": {
+          "Total": 55012,
+          "Royal": 9591,
+          "Outlands": 44708,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 15502,
+          "Royal": 454,
+          "Outlands": 14824,
+          "Avalon": 95
+        },
+        "All": {
+          "Total": 111003,
+          "Royal": 16366,
+          "Outlands": 92153,
+          "Avalon": 1016
+        }
+      },
+      "Crafting": {
+        "Total": 22906082,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 11681,
+      "FarmingFame": 494000,
+      "Timestamp": "2025-07-23T02:49:17.726810Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "AlMBOTT",
+    "Id": "uX5p7W4QRoqGwq2S_gWEcg",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 41800047,
+    "KillFame": 38938439,
+    "FameRatio": 0.93,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 60672595,
+        "Royal": 146363,
+        "Outlands": 1760601,
+        "Avalon": 33484211,
+        "Hellgate": 21579633,
+        "CorruptedDungeon": 0,
+        "Mists": 13328
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 46655869,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-22T02:52:42.056280Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Jyxir",
+    "Id": "3BTd9pQsQS-lQxd_P8vlcw",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 464881657,
+    "KillFame": 121640188,
+    "FameRatio": 0.26,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 178150464,
+        "Royal": 3358043,
+        "Outlands": 95695582,
+        "Avalon": 24103864,
+        "Hellgate": 4058716,
+        "CorruptedDungeon": 2131324,
+        "Mists": 20289234
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 292,
+          "Royal": 207,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 2714,
+          "Royal": 319,
+          "Outlands": 2300,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 333066,
+          "Royal": 34533,
+          "Outlands": 219795,
+          "Avalon": 25355
+        },
+        "Rock": {
+          "Total": 85,
+          "Royal": 85,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 180,
+          "Royal": 103,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 336337,
+          "Royal": 35247,
+          "Outlands": 222095,
+          "Avalon": 25355
+        }
+      },
+      "Crafting": {
+        "Total": 420406,
+        "Royal": 472,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 1038,
+      "FarmingFame": 126900,
+      "Timestamp": "2025-07-09T03:08:08.508795Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "Woopss",
+    "Id": "8uhL0jcLRGSVqo59n2ANqA",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "OUCH",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "",
+    "Avatar": "AVATAR_02",
+    "AvatarRing": "RING1",
+    "DeathFame": 482852959,
+    "KillFame": 660636323,
+    "FameRatio": 1.37,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 473287946,
+        "Royal": 2498317,
+        "Outlands": 164119634,
+        "Avalon": 85226078,
+        "Hellgate": 90506184,
+        "CorruptedDungeon": 7800029,
+        "Mists": 8352774
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 17007,
+          "Royal": 10267,
+          "Outlands": 6672,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 115607,
+          "Royal": 15307,
+          "Outlands": 90971,
+          "Avalon": 45
+        },
+        "Ore": {
+          "Total": 4672,
+          "Royal": 4432,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 53172,
+          "Royal": 37527,
+          "Outlands": 12855,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 29716,
+          "Royal": 8854,
+          "Outlands": 20277,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 220174,
+          "Royal": 76387,
+          "Outlands": 130775,
+          "Avalon": 45
+        }
+      },
+      "Crafting": {
+        "Total": 210080260,
+        "Royal": 384,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 9936881,
+      "FishingFame": 37649,
+      "FarmingFame": 98000,
+      "Timestamp": "2025-07-23T02:49:16.809477Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "FaD0X",
+    "Id": "G2LFbS-ETJKtoNNIYkR1zg",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "",
+    "AvatarRing": "",
+    "DeathFame": 82624734,
+    "KillFame": 62851928,
+    "FameRatio": 0.76,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 311353052,
+        "Royal": 9857937,
+        "Outlands": 47690616,
+        "Avalon": 60908127,
+        "Hellgate": 1182776,
+        "CorruptedDungeon": 1218051,
+        "Mists": 146920474
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 488944,
+          "Royal": 12987,
+          "Outlands": 301929,
+          "Avalon": 125004
+        },
+        "Hide": {
+          "Total": 555215,
+          "Royal": 51584,
+          "Outlands": 258250,
+          "Avalon": 146893
+        },
+        "Ore": {
+          "Total": 433301,
+          "Royal": 33644,
+          "Outlands": 207158,
+          "Avalon": 105630
+        },
+        "Rock": {
+          "Total": 274567,
+          "Royal": 36715,
+          "Outlands": 49690,
+          "Avalon": 145455
+        },
+        "Wood": {
+          "Total": 379197,
+          "Royal": 3766,
+          "Outlands": 171214,
+          "Avalon": 146288
+        },
+        "All": {
+          "Total": 2131224,
+          "Royal": 138696,
+          "Outlands": 988241,
+          "Avalon": 669270
+        }
+      },
+      "Crafting": {
+        "Total": 20021481,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 60045,
+      "FarmingFame": 636500,
+      "Timestamp": "2025-07-23T02:49:17.615190Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "TheWorldBurnerAl",
+    "Id": "TmAkfN9rS06dewExqNw8Ow",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "AVATAR_08",
+    "AvatarRing": "RING1",
+    "DeathFame": 171577698,
+    "KillFame": 69854927,
+    "FameRatio": 0.41,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 52329255,
+        "Royal": 18047626,
+        "Outlands": 32472351,
+        "Avalon": 510566,
+        "Hellgate": 174933,
+        "CorruptedDungeon": 0,
+        "Mists": 17525
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 364,
+          "Royal": 310,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 13,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 342,
+          "Royal": 306,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 2934,
+          "Royal": 468,
+          "Outlands": 2317,
+          "Avalon": 135
+        },
+        "All": {
+          "Total": 3653,
+          "Royal": 1084,
+          "Outlands": 2317,
+          "Avalon": 135
+        }
+      },
+      "Crafting": {
+        "Total": 580617,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": "2025-04-09T02:21:50.133639Z"
+    }
+  },
+  {
+    "AverageItemPower": 0.0,
+    "Equipment": {
+      "MainHand": null,
+      "OffHand": null,
+      "Head": null,
+      "Armor": null,
+      "Shoes": null,
+      "Bag": null,
+      "Cape": null,
+      "Mount": null,
+      "Potion": null,
+      "Food": null
+    },
+    "Inventory": [],
+    "Name": "YoungNascarLife",
+    "Id": "FRMXww8VRmGZ5vPFTs05qw",
+    "GuildName": "Doggie Down",
+    "GuildId": "vENmsDoaSaWfLxMBOaSd6w",
+    "AllianceName": "Are you ok",
+    "AllianceId": "aqRQ-DPJSjSSBYyV7d5MIw",
+    "AllianceTag": "OUCH",
+    "Avatar": "AVATAR_09",
+    "AvatarRing": "RING1",
+    "DeathFame": 625922,
+    "KillFame": 2416448,
+    "FameRatio": 3.86,
+    "LifetimeStatistics": {
+      "PvE": {
+        "Total": 12136751,
+        "Royal": 133,
+        "Outlands": 1059105,
+        "Avalon": 40456,
+        "Hellgate": 0,
+        "CorruptedDungeon": 0,
+        "Mists": 8748
+      },
+      "Gathering": {
+        "Fiber": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Hide": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Ore": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Rock": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "Wood": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        },
+        "All": {
+          "Total": 0,
+          "Royal": 0,
+          "Outlands": 0,
+          "Avalon": 0
+        }
+      },
+      "Crafting": {
+        "Total": 0,
+        "Royal": 0,
+        "Outlands": 0,
+        "Avalon": 0
+      },
+      "CrystalLeague": 0,
+      "FishingFame": 0,
+      "FarmingFame": 0,
+      "Timestamp": "2025-07-23T02:49:17.250133Z"
+    }
+  }
+]
