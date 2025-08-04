@@ -23,10 +23,7 @@ function AppContent() {
             path="/" 
             element={
               isLoggedIn ? (
-                // If user is level 99, redirect to admin dashboard
-                user.role === 99 ? 
-                  <Navigate to={`/${user.MID}/admin`} replace /> :
-                  <Navigate to={`/${user.MID}`} replace />
+                <Navigate to={`/${user.MID}`} replace />
               ) : (
                 <>
                   <h2>Welcome to Roster</h2>
@@ -37,26 +34,28 @@ function AppContent() {
           />
           <Route 
             path="/:mid" 
-            element={
-              isLoggedIn ? 
-                <LiveRoster /> : 
-                <Navigate to="/" replace />
-            } 
+            element={<LiveRoster />} 
           />
           <Route 
             path="/:mid/admin" 
             element={
-              isLoggedIn && user.role === 99 ? 
+              isLoggedIn ? 
                 <AdminDashboard /> : 
-                <Navigate to="/" replace />
+                <div style={{ padding: '20px', textAlign: 'center' }}>
+                  <h2>Access Restricted</h2>
+                  <p>Please sign in to access admin area</p>
+                </div>
             } 
           />
           <Route 
             path="/:mid/admin/usermanagement" 
             element={
-              isLoggedIn && user.role >= 98 ? 
+              isLoggedIn ? 
                 <UserManagement /> : 
-                <Navigate to="/" replace />
+                <div style={{ padding: '20px', textAlign: 'center' }}>
+                  <h2>Access Restricted</h2>
+                  <p>Please sign in to access admin area</p>
+                </div>
             } 
           />
         </Routes>

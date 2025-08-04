@@ -3,7 +3,10 @@ import {
   addDoc, 
   query, 
   where, 
-  getDocs 
+  getDocs,
+  doc,
+  updateDoc,
+  deleteDoc
 } from 'firebase/firestore';
 import { db } from './config';
 
@@ -47,7 +50,7 @@ const checkUsernameExists = async (username) => {
 };
 
 // Create a new user account (saves to Firebase)
-export const createUserAccount = async (username, password) => {
+export const createUserAccount = async (username, password, role = 99, allianceEntityMID = null) => {
   try {
     // Check if username already exists
     const usernameExists = await checkUsernameExists(username);
@@ -55,20 +58,20 @@ export const createUserAccount = async (username, password) => {
       return { success: false, error: 'Username already exists' };
     }
     
-    // Generate unique MID
-    const mid = await generateMID();
+    // For new signups (role 99), generate new MID. For sub-users, use the alliance entity MID
+    const mid = allianceEntityMID || await generateMID();
     
     // Store user info in Firestore Users collection
     const docRef = await addDoc(collection(db, 'Users'), {
       MID: mid,
       username: username,
       password: password,
-      role: 99,
+      role: role,
       createdAt: new Date(),
       lastLogin: new Date()
     });
     
-    console.log('User created in Firebase with MID:', mid);
+    console.log('User created in Firebase with MID:', mid, 'role:', role);
     return { success: true, mid, docId: docRef.id };
     
   } catch (error) {
@@ -115,6 +118,51 @@ export const signOutUser = async () => {
     return { success: true };
   } catch (error) {
     console.error('Error signing out:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Get all users from the database
+export const getAllUsers = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'Users'));
+    const users = [];
+    querySnapshot.forEach((doc) => {
+      users.push({
+        id: doc.id,
+        ...doc.data()
+      });
+    });
+    return { success: true, users };
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Update user role
+export const updateUserRole = async (userId, newRole) => {
+  try {
+    const userRef = doc(db, 'Users', userId);
+    await updateDoc(userRef, {
+      role: newRole
+    });
+    console.log('User role updated successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('Error updating user role:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Delete user
+export const deleteUser = async (userId) => {
+  try {
+    await deleteDoc(doc(db, 'Users', userId));
+    console.log('User deleted successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('Error deleting user:', error);
     return { success: false, error: error.message };
   }
 };

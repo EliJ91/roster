@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { createUserAccount, signInUser } from '../firebase/auth-firestore';
 import { useUser } from '../context/UserContext';
 import './SignInModal.css';
 
 function SignInModal({ isOpen, onClose }) {
   const { login } = useUser();
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
@@ -88,8 +90,16 @@ function SignInModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
+  const handleOverlayMouseDown = (e) => {
+    // Only close if the mousedown started on the overlay itself
+    if (e.target === e.currentTarget) {
+      e.preventDefault();
+      onClose();
+    }
+  };
+
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onMouseDown={handleOverlayMouseDown}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>{isSignUp ? 'Create Account' : 'Sign In'}</h2>

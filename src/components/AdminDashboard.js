@@ -34,8 +34,6 @@ function AdminDashboard() {
         <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px' }}>
           <h3>User Information</h3>
           <p><strong>Username:</strong> {user.username}</p>
-          <p><strong>Master ID:</strong> {user.MID}</p>
-          <p><strong>Role:</strong> Admin (Level {user.role})</p>
           <p><strong>Account Created:</strong> {new Date(user.createdAt).toLocaleDateString()}</p>
           <p><strong>Last Login:</strong> {new Date(user.lastLogin).toLocaleDateString()}</p>
         </div>
