@@ -8,7 +8,7 @@ import CreateRoster from './components/CreateRoster';
 import ManageRosters from './components/ManageRosters';
 import LiveRoster from './components/LiveRoster';
 import SharedRoster from './components/SharedRoster';
-import DevAdminPanel from './components/DevAdminPanel';
+// import DevAdminPanel from './components/DevAdminPanel';
 import './App.css';
 
 function AppContent() {
@@ -92,7 +92,7 @@ function AppContent() {
       </main>
       
       {/* Development Admin Panel - Only shows in development mode */}
-      <DevAdminPanel />
+      {/* <DevAdminPanel /> */}
     </div>
   );
 }
