@@ -1,6 +1,6 @@
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 import { validateConfig } from '../config/constants';
 
 // Validate environment variables on startup
@@ -9,6 +9,7 @@ validateConfig();
 let firebaseConfig = null;
 let app = null;
 export let db = null;
+export let auth = null;
 
 export const initFirebase = async () => {
   if (!firebaseConfig) {
@@ -23,11 +24,12 @@ export const initFirebase = async () => {
       appId: config.firebaseAppId,
       measurementId: config.firebaseMeasurementId,
     };
-    app = firebase.initializeApp(firebaseConfig);
-    db = app.firestore();
+    app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    auth = getAuth(app);
   }
   return app;
 };
 
-export const getDb = () => (app ? app.firestore() : null);
-export const getAuth = () => (app ? app.auth() : null);
+export const getDb = () => db;
+export const getAuthInstance = () => auth;
