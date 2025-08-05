@@ -1,0 +1,21 @@
+exports.handler = async () => ({
+  statusCode: 200,
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    firebaseApiKey: process.env.FIREBASE_API_KEY,
+    firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
+    firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    firebaseMessagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    firebaseAppId: process.env.FIREBASE_APP_ID,
+    firebaseMeasurementId: process.env.FIREBASE_MEASUREMENT_ID,
+    env: process.env.ENV,
+    appName: process.env.APP_NAME,
+    adminRoleThreshold: process.env.ADMIN_ROLE_THRESHOLD,
+    moderatorRoleThreshold: process.env.MODERATOR_ROLE_THRESHOLD,
+    userRoleThreshold: process.env.USER_ROLE_THRESHOLD,
+    sessionTimeout: process.env.SESSION_TIMEOUT,
+    usernameCookieExpiry: process.env.USERNAME_COOKIE_EXPIRY,
+    signupCooldownMs: process.env.SIGNUP_COOLDOWN_MS,
+  }),
+});

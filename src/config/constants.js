@@ -1,32 +1,39 @@
 // Application configuration constants
 // These values are pulled from environment variables with fallback defaults
 
-export const CONFIG = {
-  // Role thresholds
-  ADMIN_ROLE_THRESHOLD: parseInt(process.env.REACT_APP_ADMIN_ROLE_THRESHOLD) || 97,
-  MODERATOR_ROLE_THRESHOLD: parseInt(process.env.REACT_APP_MODERATOR_ROLE_THRESHOLD) || 97,
-  USER_ROLE_THRESHOLD: parseInt(process.env.REACT_APP_USER_ROLE_THRESHOLD) || 90,
-  
-  // Time configurations (in milliseconds)
-  SIGNUP_COOLDOWN: parseInt(process.env.REACT_APP_SIGNUP_COOLDOWN_MS) || 180000, // 3 minutes
-  USERNAME_COOKIE_EXPIRY: parseInt(process.env.REACT_APP_USERNAME_COOKIE_EXPIRY) || 3600000, // 1 hour
-  SESSION_TIMEOUT: parseInt(process.env.REACT_APP_SESSION_TIMEOUT) || 3600000, // 1 hour
+export let CONFIG = {
+  ADMIN_ROLE_THRESHOLD: 97,
+  MODERATOR_ROLE_THRESHOLD: 97,
+  USER_ROLE_THRESHOLD: 90,
+  SIGNUP_COOLDOWN: 180000,
+  USERNAME_COOKIE_EXPIRY: 3600000,
+  SESSION_TIMEOUT: 3600000,
   ROSTER_AUTO_LOCK_HOURS: 24,
-  
-  // Application settings
-  APP_NAME: process.env.REACT_APP_APP_NAME || 'Roster Management System',
-  ENVIRONMENT: process.env.REACT_APP_ENV || 'development',
-  
-  // Debug settings
-  DEBUG_MODE: process.env.REACT_APP_DEBUG_MODE === 'true',
-  CONSOLE_LOGGING: process.env.REACT_APP_CONSOLE_LOGGING === 'true',
-  
-  // Helper functions
+  APP_NAME: 'Roster Management System',
+  ENVIRONMENT: 'production',
+  DEBUG_MODE: false,
+  CONSOLE_LOGGING: false,
   isProduction: () => CONFIG.ENVIRONMENT === 'production',
   isDevelopment: () => CONFIG.ENVIRONMENT === 'development',
   isAdmin: (userRole) => userRole >= CONFIG.ADMIN_ROLE_THRESHOLD,
   isModerator: (userRole) => userRole >= CONFIG.MODERATOR_ROLE_THRESHOLD,
   isUser: (userRole) => userRole >= CONFIG.USER_ROLE_THRESHOLD,
+};
+
+export const fetchSecureConfig = async () => {
+  const res = await fetch('/.netlify/functions/getSecureConfig');
+  const config = await res.json();
+  CONFIG = {
+    ...CONFIG,
+    ADMIN_ROLE_THRESHOLD: parseInt(config.adminRoleThreshold),
+    MODERATOR_ROLE_THRESHOLD: parseInt(config.moderatorRoleThreshold),
+    USER_ROLE_THRESHOLD: parseInt(config.userRoleThreshold),
+    SIGNUP_COOLDOWN: parseInt(config.signupCooldownMs),
+    USERNAME_COOKIE_EXPIRY: parseInt(config.usernameCookieExpiry),
+    SESSION_TIMEOUT: parseInt(config.sessionTimeout),
+    APP_NAME: config.appName,
+    ENVIRONMENT: config.env,
+  };
 };
 
 // Validate required environment variables

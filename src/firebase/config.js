@@ -9,19 +9,30 @@ validateConfig();
 
 // Firebase configuration using environment variables
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+
+let firebaseConfig = null;
+let app = null;
+
+export const initFirebase = async () => {
+  if (!firebaseConfig) {
+    const res = await fetch('/.netlify/functions/getSecureConfig');
+    const config = await res.json();
+    firebaseConfig = {
+      apiKey: config.firebaseApiKey,
+      authDomain: config.firebaseAuthDomain,
+      projectId: config.firebaseProjectId,
+      storageBucket: config.firebaseStorageBucket,
+      messagingSenderId: config.firebaseMessagingSenderId,
+      appId: config.firebaseAppId,
+      measurementId: config.firebaseMeasurementId,
+    };
+    app = firebase.initializeApp(firebaseConfig);
+  }
+  return app;
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase services
-export const db = getFirestore(app);
-export const auth = getAuth(app);
-export default app;
+export const getDb = () => app ? app.firestore() : null;
+export const getAuth = () => app ? app.auth() : null;
