@@ -77,10 +77,10 @@ function UserManagement() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [showCreateForm, setShowCreateForm] = useState(false);
-  const [newUser, setNewUser] = useState({ username: '', password: '', confirmPassword: '', role: 90 });
+  const [newUser, setNewUser] = useState({ username: '', password: '', confirmPassword: '', role: CONFIG.USER_ROLE_THRESHOLD });
   const [creating, setCreating] = useState(false);
   const [editingUser, setEditingUser] = useState(null);
-  const [editRole, setEditRole] = useState(90);
+  const [editRole, setEditRole] = useState(CONFIG.USER_ROLE_THRESHOLD);
   
   // Guild management state
   const [guildId, setGuildId] = useState('');
@@ -101,7 +101,7 @@ function UserManagement() {
   }, [user?.MID]);
 
   // Check if user has permission to access user management
-  if (!user || user.role < 97) {
+  if (!user || !CONFIG.isModerator(user.role)) {
     return (
       <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ marginBottom: '20px' }}>
@@ -184,7 +184,7 @@ function UserManagement() {
     const result = await createUserAccount(newUser.username, newUser.password, newUser.role, user.MID);
     if (result.success) {
       // Reset form and refresh users
-      setNewUser({ username: '', password: '', confirmPassword: '', role: 90 });
+      setNewUser({ username: '', password: '', confirmPassword: '', role: CONFIG.USER_ROLE_THRESHOLD });
       setShowCreateForm(false);
       fetchUsers();
       console.log('User created successfully with role:', newUser.role, 'for alliance entity:', user.MID);

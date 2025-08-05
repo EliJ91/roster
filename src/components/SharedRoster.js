@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSharedRoster, updateSharedRoster } from '../firebase/auth-firestore';
+import { getSharedRoster } from '../firebase/auth-firestore';
 import { useUser } from '../context/UserContext';
 import { db } from '../firebase/config';
 import { collection, query, where, getDocs, doc, updateDoc, onSnapshot, serverTimestamp, deleteField } from 'firebase/firestore';
@@ -181,7 +181,6 @@ function SharedRoster() {
   const [error, setError] = useState(null);
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [selectedMember, setSelectedMember] = useState('');
-  const [selectedWeapon, setSelectedWeapon] = useState('');
   const [selectedWeapons, setSelectedWeapons] = useState([]);
   const [memberSearchTerm, setMemberSearchTerm] = useState('');
   const [showMemberDropdown, setShowMemberDropdown] = useState(false);
@@ -205,7 +204,7 @@ function SharedRoster() {
       setSelectedMember(storedUsername);
       setMemberSearchTerm(storedUsername);
     }
-  }, [selectedMember]);
+  }, [selectedMember, getUsernameCookie]);
 
   // Calculate disarray level based on number of signups
   const calculateDisarrayLevel = (signupCount) => {
@@ -502,23 +501,6 @@ function SharedRoster() {
     return timeDiff < threeMinutes;
   };
 
-  // Get remaining cooldown time in minutes and seconds
-  const getRemainingCooldownTime = () => {
-    const lastSignupTime = getCookie('lastSignupTime');
-    if (!lastSignupTime) return null;
-    
-    const timeDiff = Date.now() - parseInt(lastSignupTime);
-    const threeMinutes = 3 * 60 * 1000;
-    const remaining = threeMinutes - timeDiff;
-    
-    if (remaining <= 0) return null;
-    
-    const minutes = Math.floor(remaining / 60000);
-    const seconds = Math.floor((remaining % 60000) / 1000);
-    
-    return { minutes, seconds };
-  };
-
   // Handle signup process with multiple weapons
   const handleSignup = async () => {
     // Check if roster is locked
@@ -630,7 +612,7 @@ function SharedRoster() {
     }
     
     // Moderator (role 97+) can toggle lock
-    if (user.role >= 97) {
+    if (user && CONFIG.isModerator(user.role)) {
       console.log('canToggleLock: User is moderator/admin', { role: user.role });
       return true;
     }
@@ -646,19 +628,6 @@ function SharedRoster() {
       userUsername: user.username, 
       rosterSharedByUsername: roster.sharedByUsername 
     });
-    return false;
-  };
-
-  // Check if user can unlock roster (same as toggle lock permissions)
-  const canUnlockRoster = () => {
-    if (!user || !roster) return false;
-    
-    // Moderator (role 97+) can unlock any roster
-    if (user.role >= 97) return true;
-    
-    // Original sharer can unlock their shared roster (compare by username)
-    if (roster.sharedByUsername && user.username && roster.sharedByUsername === user.username) return true;
-    
     return false;
   };
 
@@ -732,7 +701,7 @@ function SharedRoster() {
     }
     
     // Moderator (role 97+) can edit any shared roster
-    if (user.role >= 97) {
+    if (user && CONFIG.isModerator(user.role)) {
       console.log('canEditEntries: User is moderator/admin', { role: user.role });
       return true;
     }
@@ -789,7 +758,7 @@ function SharedRoster() {
 
     // Allow users to remove their own signup by checking if the selectedMember matches their display name
     // or if they are an admin/moderator (role 97+)
-    const canRemove = user.role >= 97 || 
+    const canRemove = (user && CONFIG.isModerator(user.role)) || 
                      selectedMember === user.username || 
                      selectedMember === user.name ||
                      selectedMember === (user.username || user.name);
@@ -961,39 +930,6 @@ function SharedRoster() {
     }
   };
 
-  // Handle deleting an entry
-  const handleDeleteEntry = async (index) => {
-    if (!canEditEntries()) {
-      alert('Denied: This roster is locked. No changes can be made to rosters older than 24 hours.');
-      return;
-    }
-
-    if (!window.confirm('Are you sure you want to delete this entry?')) {
-      return;
-    }
-
-    try {
-      const updatedEntries = roster.entries.filter((_, i) => i !== index);
-      const updatedRoster = {
-        ...roster,
-        entries: updatedEntries,
-        dateModified: serverTimestamp(),
-        lastEditedBy: user?.username || user?.MID || 'Admin'
-      };
-
-      // Direct Firestore update - real-time listener will handle the UI update
-      await updateDoc(doc(db, 'history', shareId), updatedRoster);
-      
-      showNotification('Entry deleted successfully!');
-      
-      // No need to manually update state - real-time listener handles it!
-      
-    } catch (error) {
-      console.error('Error deleting entry:', error);
-      showNotification('Error deleting entry. Please try again.', 'error');
-    }
-  };
-
   // Real-time listener for shared roster updates
   useEffect(() => {
     if (!shareId) return;
@@ -1052,66 +988,6 @@ function SharedRoster() {
       unsubscribe();
     };
   }, [shareId]);
-
-  const loadSharedRoster = async () => {
-    // This function is now only used as a fallback or manual refresh
-    // The real-time listener above handles automatic loading
-    try {
-      setLoading(true);
-      setError(null);
-      
-      const result = await getSharedRoster(shareId);
-      
-      if (result.success) {
-        setRoster(result.roster);
-        
-        // Load members for this roster's MID
-        if (result.roster.MID) {
-          await loadMembers(result.roster.MID);
-        }
-      } else {
-        setError(result.error || 'Roster not found');
-      }
-    } catch (error) {
-      console.error('Error loading shared roster:', error);
-      setError('Failed to load roster');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const formatDate = (date) => {
-    if (!date) return 'Unknown';
-    
-    try {
-      const dateObj = date.toDate ? date.toDate() : new Date(date);
-      return dateObj.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      });
-    } catch (error) {
-      return 'Unknown';
-    }
-  };
-
-  const formatNumber = (num) => {
-    if (num === undefined || num === null) return '0';
-    
-    const number = parseInt(num);
-    if (isNaN(number)) return '0';
-    
-    if (number >= 1000000000) {
-      return (number / 1000000000).toFixed(1) + 'B';
-    } else if (number >= 1000000) {
-      return (number / 1000000).toFixed(1) + 'M';
-    } else if (number >= 1000) {
-      return (number / 1000).toFixed(1) + 'K';
-    }
-    return number.toLocaleString();
-  };
 
   if (loading) {
     return (
@@ -1310,7 +1186,7 @@ function SharedRoster() {
           )}
           
           {/* Show sharer info for admins/moderators */}
-          {user && user.role >= 97 && roster.sharedByUsername && (
+          {user && CONFIG.isModerator(user.role) && roster.sharedByUsername && (
             <p style={{ 
               margin: '5px 0 0 0', 
               color: '#666', 
