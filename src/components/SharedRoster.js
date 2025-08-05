@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getSharedRoster } from '../firebase/auth-firestore';
 import { useUser } from '../context/UserContext';
 import { db } from '../firebase/config';
+import CONFIG from '../config/constants';
 import { collection, query, where, getDocs, doc, updateDoc, onSnapshot, serverTimestamp, deleteField } from 'firebase/firestore';
 // import DevAdminPanel from './DevAdminPanel';
 
