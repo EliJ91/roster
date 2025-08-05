@@ -4,6 +4,7 @@ import { getSharedRoster, updateSharedRoster } from '../firebase/auth-firestore'
 import { useUser } from '../context/UserContext';
 import { db } from '../firebase/config';
 import { collection, query, where, getDocs, doc, updateDoc, onSnapshot, serverTimestamp, deleteField } from 'firebase/firestore';
+import DevAdminPanel from './DevAdminPanel';
 
 // PlayerNameSelector component for enhanced player selection
 function PlayerNameSelector({ value, onChange, weaponName, entryIndex, getMembersForWeapon, getAvailableMembers, customStyle = {} }) {
@@ -187,8 +188,6 @@ function SharedRoster() {
   const [members, setMembers] = useState([]);
   const [notification, setNotification] = useState(null);
   const [connectionStatus, setConnectionStatus] = useState('connecting'); // 'connecting', 'connected', 'disconnected'
-  const [showDevPanel, setShowDevPanel] = useState(false);
-  const [jsonImportData, setJsonImportData] = useState('');
   const [editingRosterName, setEditingRosterName] = useState(false);
   const [rosterNameValue, setRosterNameValue] = useState('');
 
@@ -198,6 +197,15 @@ function SharedRoster() {
       setRosterNameValue(roster.name);
     }
   }, [roster?.name]);
+
+  // Load stored username from cookie when component mounts
+  useEffect(() => {
+    const storedUsername = getUsernameCookie();
+    if (storedUsername && !selectedMember) {
+      setSelectedMember(storedUsername);
+      setMemberSearchTerm(storedUsername);
+    }
+  }, [selectedMember]);
 
   // Calculate disarray level based on number of signups
   const calculateDisarrayLevel = (signupCount) => {
@@ -432,7 +440,7 @@ function SharedRoster() {
     }
   };
 
-  // Cookie helper functions for signup cooldown
+  // Cookie helper functions for signup cooldown and username storage
   const setCookie = (name, value, days = 365) => {
     const expires = new Date();
     expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -448,6 +456,39 @@ function SharedRoster() {
       if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
+  };
+
+  // Enhanced username cookie functions with expiration tracking
+  const setUsernameCookie = (username) => {
+    const cookieData = {
+      username: username,
+      timestamp: Date.now()
+    };
+    setCookie('selectedMemberName', JSON.stringify(cookieData), 1/24); // 1 hour
+  };
+
+  const getUsernameCookie = () => {
+    const cookieValue = getCookie('selectedMemberName');
+    if (!cookieValue) return null;
+
+    try {
+      const cookieData = JSON.parse(cookieValue);
+      const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+      const timeDiff = Date.now() - cookieData.timestamp;
+
+      // Check if cookie has expired (more than 1 hour old)
+      if (timeDiff > oneHour) {
+        // Remove expired cookie
+        document.cookie = `selectedMemberName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        return null;
+      }
+
+      return cookieData.username;
+    } catch (error) {
+      // If JSON parsing fails, treat as expired and remove
+      document.cookie = `selectedMemberName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+      return null;
+    }
   };
 
   // Check if user is on signup cooldown
@@ -493,7 +534,7 @@ function SharedRoster() {
 
     // Check signup cooldown
     if (isOnSignupCooldown()) {
-      alert('Please wait before signing up again.');
+      alert('Please wait before making another change.');
       return;
     }
 
@@ -525,8 +566,11 @@ function SharedRoster() {
       
       await updateMemberLinked(selectedMember, true);
       
-      // Set signup cooldown cookie
+      // Set signup cooldown cookie for any roster change
       setCookie('lastSignupTime', Date.now().toString());
+      
+      // Store the selected member name for future pre-filling (expires in 1 hour)
+      setUsernameCookie(selectedMember);
       
       showNotification(`Successfully signed up for ${selectedWeapons.length} weapon(s)!`);
       setShowSignupModal(false);
@@ -728,12 +772,36 @@ function SharedRoster() {
       return;
     }
 
-    // Check if member has signed up
+    // Check if user can only remove their own signup
+    if (!user) {
+      alert('You must be logged in to remove a signup.');
+      return;
+    }
+
+    // Check if the selected member is actually signed up
     const existingSignups = roster.signups || [];
     const existingSignup = existingSignups.find(signup => signup.name === selectedMember);
     
     if (!existingSignup) {
       alert(`${selectedMember} has not signed up for this roster.`);
+      return;
+    }
+
+    // Allow users to remove their own signup by checking if the selectedMember matches their display name
+    // or if they are an admin/moderator (role 97+)
+    const canRemove = user.role >= 97 || 
+                     selectedMember === user.username || 
+                     selectedMember === user.name ||
+                     selectedMember === (user.username || user.name);
+
+    if (!canRemove) {
+      alert('You can only remove your own signup.');
+      return;
+    }
+
+    // Check signup cooldown for any roster change
+    if (isOnSignupCooldown()) {
+      alert('Please wait before making another change.');
       return;
     }
 
@@ -750,6 +818,12 @@ function SharedRoster() {
 
       await updateDoc(doc(db, 'history', shareId), updatedRoster);
       
+      // Set signup cooldown cookie for any roster change
+      setCookie('lastSignupTime', Date.now().toString());
+      
+      // Store the selected member name for future pre-filling (expires in 1 hour)
+      setUsernameCookie(selectedMember);
+      
       showNotification(`${selectedMember} has been removed from the signup list.`);
       setShowSignupModal(false);
       
@@ -762,47 +836,6 @@ function SharedRoster() {
     } catch (error) {
       console.error('Error removing signup:', error);
       alert('Error removing signup. Please try again.');
-    }
-  };
-
-  // Handle JSON import for bulk adding signups
-  const handleJsonImport = async () => {
-    if (!canEditEntries()) {
-      alert('Denied: This roster is locked. No changes can be made to rosters older than 24 hours.');
-      return;
-    }
-
-    try {
-      const parsedData = JSON.parse(jsonImportData);
-      
-      if (!Array.isArray(parsedData)) {
-        showNotification('JSON must be an array of signups', 'error');
-        return;
-      }
-
-      // Simple format: array of {name, weapons: []}
-      const newSignups = parsedData.map(signup => ({
-        name: signup.name || signup.playerName || '',
-        weapons: Array.isArray(signup.weapons) ? signup.weapons : [signup.weapon].filter(Boolean)
-      }));
-
-      // Store in roster document
-      const updatedRoster = {
-        ...roster,
-        signups: [...(roster.signups || []), ...newSignups],
-        dateModified: serverTimestamp(),
-        lastEditedBy: user?.username || user?.MID || 'Admin'
-      };
-
-      await updateDoc(doc(db, 'history', shareId), updatedRoster);
-      
-      showNotification(`Successfully imported ${newSignups.length} signups!`);
-      setJsonImportData('');
-      setShowDevPanel(false);
-      
-    } catch (error) {
-      console.error('Error importing JSON data:', error);
-      showNotification('Error parsing JSON data. Please check format.', 'error');
     }
   };
 
@@ -838,34 +871,6 @@ function SharedRoster() {
       console.error('Error updating roster name:', error);
       showNotification('Error updating roster name. Please try again.', 'error');
     }
-  };
-
-  // Generate sample JSON data - simplified
-  const generateSampleJson = () => {
-    const sampleData = [
-      {
-        "name": "DragonSlayer99",
-        "weapons": ["Greatsword", "War Hammer"]
-      },
-      {
-        "name": "MysticHealer",
-        "weapons": ["Life Staff", "Void Gauntlet"]
-      },
-      {
-        "name": "ShadowArcher",
-        "weapons": ["Bow", "Spear"]
-      },
-      {
-        "name": "FireMage",
-        "weapons": ["Fire Staff", "Ice Gauntlet"]
-      },
-      {
-        "name": "IceWarden",
-        "weapons": ["Ice Gauntlet", "Rapier"]
-      }
-    ];
-    
-    setJsonImportData(JSON.stringify(sampleData, null, 2));
   };
 
   // Handle direct field update for any roster entry field
@@ -1831,143 +1836,6 @@ function SharedRoster() {
         )}
       </div>
 
-      {/* Developer Panel - Only visible to admins */}
-      {canEditEntries() && (
-        <div style={{
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-          border: '1px solid #dee2e6',
-          overflow: 'hidden',
-          marginTop: '20px'
-        }}>
-          <div 
-            style={{
-              padding: '15px 20px',
-              backgroundColor: '#343a40',
-              borderBottom: '1px solid #dee2e6',
-              cursor: 'pointer'
-            }}
-            onMouseDown={() => {
-              setShowDevPanel(prev => !prev);
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h3 style={{ margin: '0', color: 'white', fontSize: '16px' }}>
-                🛠️ Developer Panel - Bulk Import
-              </h3>
-              <span style={{ color: 'white', fontSize: '14px' }}>
-                {showDevPanel ? '▼' : '▶'} Click to {showDevPanel ? 'hide' : 'show'}
-              </span>
-            </div>
-          </div>
-
-          {showDevPanel && (
-            <div style={{ padding: '20px' }}>
-              <div style={{ marginBottom: '15px' }}>
-                <h4 style={{ margin: '0 0 10px 0', color: '#333' }}>Import Multiple Signups via JSON</h4>
-                <p style={{ margin: '0 0 15px 0', color: '#666', fontSize: '14px' }}>
-                  Paste JSON data to simulate multiple people signing up for weapons. Each signup should include name and weapons array.
-                </p>
-              </div>
-
-              <div style={{ display: 'flex', gap: '10px', marginBottom: '15px' }}>
-                <button
-                  onClick={generateSampleJson}
-                  style={{
-                    padding: '8px 16px',
-                    borderRadius: '4px',
-                    border: '1px solid #007bff',
-                    backgroundColor: '#007bff',
-                    color: 'white',
-                    cursor: 'pointer',
-                    fontSize: '14px'
-                  }}
-                >
-                  Generate Sample Data
-                </button>
-                <button
-                  onClick={() => setJsonImportData('')}
-                  style={{
-                    padding: '8px 16px',
-                    borderRadius: '4px',
-                    border: '1px solid #6c757d',
-                    backgroundColor: '#6c757d',
-                    color: 'white',
-                    cursor: 'pointer',
-                    fontSize: '14px'
-                  }}
-                >
-                  Clear
-                </button>
-              </div>
-
-              <div style={{ marginBottom: '15px' }}>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', color: '#333' }}>
-                  JSON Data:
-                </label>
-                <textarea
-                  value={jsonImportData}
-                  onChange={(e) => setJsonImportData(e.target.value)}
-                  placeholder={`Paste JSON array here, example:\n[\n  {\n    "name": "TestUser1",\n    "weapons": ["Greatsword", "War Hammer"]\n  }\n]`}
-                  style={{
-                    width: '100%',
-                    height: '200px',
-                    padding: '10px',
-                    borderRadius: '4px',
-                    border: '1px solid #ddd',
-                    fontSize: '12px',
-                    fontFamily: 'monospace',
-                    resize: 'vertical',
-                    boxSizing: 'border-box'
-                  }}
-                />
-              </div>
-
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                <button
-                  onClick={handleJsonImport}
-                  disabled={!jsonImportData.trim()}
-                  style={{
-                    padding: '10px 20px',
-                    borderRadius: '4px',
-                    border: 'none',
-                    backgroundColor: jsonImportData.trim() ? '#28a745' : '#6c757d',
-                    color: 'white',
-                    cursor: jsonImportData.trim() ? 'pointer' : 'not-allowed',
-                    fontSize: '14px',
-                    fontWeight: 'bold'
-                  }}
-                >
-                  Import Data
-                </button>
-                <small style={{ color: '#666' }}>
-                  This will add signups to the current roster
-                </small>
-              </div>
-
-              <div style={{ 
-                marginTop: '20px', 
-                padding: '15px', 
-                backgroundColor: '#f8f9fa', 
-                borderRadius: '4px',
-                fontSize: '12px'
-              }}>
-                <strong>Expected JSON Format:</strong>
-                <pre style={{ margin: '10px 0 0 0', color: '#666' }}>
-{`[
-  {
-    "name": "PlayerName",
-    "weapons": ["Weapon1", "Weapon2", "..."]
-  }
-]`}
-                </pre>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
       {/* Footer Info */}
       <div style={{
         marginTop: '20px',
@@ -2250,6 +2118,9 @@ function SharedRoster() {
           </div>
         </div>
       )}
+
+      {/* Developer Panel */}
+      <DevAdminPanel />
     </div>
   );
 }
