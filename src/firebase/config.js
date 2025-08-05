@@ -1,17 +1,10 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 import { validateConfig } from '../config/constants';
 
 // Validate environment variables on startup
 validateConfig();
-
-// Firebase configuration using environment variables
-const firebaseConfig = {
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
 
 let firebaseConfig = null;
 let app = null;
@@ -34,5 +27,5 @@ export const initFirebase = async () => {
   return app;
 };
 
-export const getDb = () => app ? app.firestore() : null;
-export const getAuth = () => app ? app.auth() : null;
+export const getDb = () => (app ? app.firestore() : null);
+export const getAuth = () => (app ? app.auth() : null);
