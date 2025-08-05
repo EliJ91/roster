@@ -8,6 +8,7 @@ validateConfig();
 
 let firebaseConfig = null;
 let app = null;
+export let db = null;
 
 export const initFirebase = async () => {
   if (!firebaseConfig) {
@@ -23,6 +24,7 @@ export const initFirebase = async () => {
       measurementId: config.firebaseMeasurementId,
     };
     app = firebase.initializeApp(firebaseConfig);
+    db = app.firestore();
   }
   return app;
 };
