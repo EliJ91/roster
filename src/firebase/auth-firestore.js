@@ -4,9 +4,11 @@ import {
   query, 
   where, 
   getDocs,
+  getDoc,
   doc,
   updateDoc,
-  deleteDoc
+  deleteDoc,
+  setDoc
 } from 'firebase/firestore';
 import { db } from './config';
 
@@ -163,6 +165,143 @@ export const deleteUser = async (userId) => {
     return { success: true };
   } catch (error) {
     console.error('Error deleting user:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Change user password
+export const changeUserPassword = async (username, currentPassword, newPassword) => {
+  try {
+    console.log('Attempting to change password for username:', username);
+    
+    // Find user by username in Firestore
+    const q = query(collection(db, 'Users'), where('username', '==', username));
+    const querySnapshot = await getDocs(q);
+    
+    if (querySnapshot.empty) {
+      console.log('User not found');
+      return { success: false, error: 'User not found' };
+    }
+    
+    const userDoc = querySnapshot.docs[0];
+    const userData = userDoc.data();
+    console.log('User data retrieved, checking password...');
+    
+    // Verify current password - ensure both are strings
+    const storedPassword = String(userData.password || '');
+    const providedPassword = String(currentPassword || '');
+    
+    if (storedPassword !== providedPassword) {
+      console.log('Password verification failed');
+      return { success: false, error: 'Current password is incorrect' };
+    }
+    
+    // Update password using the document ID
+    const userRef = doc(db, 'Users', userDoc.id);
+    await updateDoc(userRef, {
+      password: String(newPassword),
+      lastPasswordChange: new Date()
+    });
+    
+    console.log('Password changed successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('Error changing password:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Generate a unique share ID for roster sharing
+const generateShareId = () => {
+  const timestamp = Date.now().toString(36);
+  const randomStr = Math.random().toString(36).substring(2, 15);
+  return `share_${timestamp}_${randomStr}`;
+};
+
+// Share roster - create a copy in history collection
+export const shareRoster = async (roster, userMID, username) => {
+  try {
+    const shareId = generateShareId();
+    
+    // Fetch members list for this MID
+    let membersList = [];
+    try {
+      const membersQuery = query(collection(db, 'members'), where('MID', '==', userMID));
+      const membersSnapshot = await getDocs(membersQuery);
+      membersList = membersSnapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+          username: data.username || data.playerName || 'Unknown',
+          playerId: data.playerId || '',
+          role: data.role || 90,
+          // Add any other member fields you want to include
+        };
+      });
+      console.log('Fetched members for sharing:', membersList.length);
+    } catch (membersError) {
+      console.error('Error fetching members for sharing:', membersError);
+      // Continue with empty members list if fetch fails
+    }
+    
+    // Create a copy of the roster with additional sharing metadata
+    const sharedRoster = {
+      ...roster,
+      shareId: shareId,
+      originalRosterId: roster.id,
+      sharedAt: new Date(),
+      sharedBy: userMID,
+      sharedByUsername: username,
+      createdAt: new Date(), // New creation date for the shared copy
+      author: username, // Author is the user that created the link
+      MID: userMID, // Ensure it stays within alliance entity
+      members: membersList // Include the members list
+    };
+    
+    // Remove the original document ID to create a new document
+    delete sharedRoster.id;
+    
+    // Store in history collection
+    await setDoc(doc(db, 'history', shareId), sharedRoster);
+    
+    console.log('Roster shared with ID:', shareId, 'with', membersList.length, 'members');
+    return { success: true, shareId, shareUrl: `${window.location.origin}/shared/${shareId}` };
+  } catch (error) {
+    console.error('Error sharing roster:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Get shared roster by share ID
+export const getSharedRoster = async (shareId) => {
+  try {
+    const rosterRef = doc(db, 'history', shareId);
+    const rosterSnap = await getDoc(rosterRef);
+    
+    if (!rosterSnap.exists()) {
+      return { success: false, error: 'Shared roster not found' };
+    }
+    
+    const rosterData = rosterSnap.data();
+    return { success: true, roster: { id: rosterSnap.id, ...rosterData } };
+  } catch (error) {
+    console.error('Error getting shared roster:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Update shared roster with new entry
+export const updateSharedRoster = async (shareId, updatedRoster) => {
+  try {
+    const rosterRef = doc(db, 'history', shareId);
+    await updateDoc(rosterRef, {
+      entries: updatedRoster.entries,
+      lastModified: new Date()
+    });
+    
+    console.log('Shared roster updated successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('Error updating shared roster:', error);
     return { success: false, error: error.message };
   }
 };

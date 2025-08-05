@@ -15,6 +15,15 @@ function SignInModal({ isOpen, onClose }) {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [notification, setNotification] = useState(null);
+
+  // Show auto-dismissing notification
+  const showNotification = (message, type = 'success') => {
+    setNotification({ message, type });
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000); // Auto-dismiss after 3 seconds
+  };
 
   const handleInputChange = (e) => {
     setFormData({
@@ -58,7 +67,7 @@ function SignInModal({ isOpen, onClose }) {
         const loginResult = await signInUser(formData.username, formData.password);
         if (loginResult.success) {
           login(loginResult.userData);
-          alert('Account created!');
+          showNotification('Account created!');
           onClose();
         }
       } else {
@@ -100,6 +109,28 @@ function SignInModal({ isOpen, onClose }) {
 
   return (
     <div className="modal-overlay" onMouseDown={handleOverlayMouseDown}>
+      {/* Notification Toast */}
+      {notification && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          backgroundColor: notification.type === 'success' ? '#28a745' : '#dc3545',
+          color: 'white',
+          padding: '12px 20px',
+          borderRadius: '6px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          zIndex: 10001,
+          fontSize: '14px',
+          fontWeight: '500',
+          maxWidth: '300px',
+          transform: 'translateX(0)',
+          transition: 'all 0.3s ease-out'
+        }}>
+          {notification.message}
+        </div>
+      )}
+      
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>{isSignUp ? 'Create Account' : 'Sign In'}</h2>

@@ -7,6 +7,8 @@ import UserManagement from './components/UserManagement';
 import CreateRoster from './components/CreateRoster';
 import ManageRosters from './components/ManageRosters';
 import LiveRoster from './components/LiveRoster';
+import SharedRoster from './components/SharedRoster';
+import DevAdminPanel from './components/DevAdminPanel';
 import './App.css';
 
 function AppContent() {
@@ -33,6 +35,10 @@ function AppContent() {
                 </>
               )
             } 
+          />
+          <Route 
+            path="/shared/:shareId" 
+            element={<SharedRoster />} 
           />
           <Route 
             path="/:mid" 
@@ -84,6 +90,9 @@ function AppContent() {
           />
         </Routes>
       </main>
+      
+      {/* Development Admin Panel - Only shows in development mode */}
+      <DevAdminPanel />
     </div>
   );
 }

@@ -10,7 +10,8 @@ import {
   getDocs, 
   setDoc, 
   doc,
-  deleteDoc 
+  deleteDoc,
+  updateDoc
 } from 'firebase/firestore';
 
 function UserManagement() {
@@ -98,6 +99,39 @@ function UserManagement() {
       loadMembers();
     }
   }, [user?.MID]);
+
+  // Check if user has permission to access user management
+  if (!user || user.role < 97) {
+    return (
+      <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ marginBottom: '20px' }}>
+          <Link 
+            to={`/${user?.MID}/admin`}
+            style={{ color: '#3498db', textDecoration: 'none' }}
+          >
+            ← Back to Admin Dashboard
+          </Link>
+        </div>
+        
+        <div style={{
+          padding: '40px',
+          backgroundColor: '#f8d7da',
+          color: '#721c24',
+          borderRadius: '8px',
+          border: '1px solid #f5c6cb',
+          textAlign: 'center'
+        }}>
+          <h2>Access Denied</h2>
+          <p style={{ fontSize: '18px', marginBottom: '10px' }}>
+            You do not have permission to access User Management.
+          </p>
+          <p style={{ fontSize: '14px', color: '#856404' }}>
+            This feature requires Moderator level access or higher.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -239,10 +273,15 @@ function UserManagement() {
       const querySnapshot = await getDocs(q);
       const membersList = [];
       querySnapshot.forEach((doc) => {
-        membersList.push({ id: doc.id, ...doc.data() });
+        membersList.push({ 
+          id: doc.data().id, // This is the game ID from the API
+          docId: doc.id,     // This is the actual Firestore document ID
+          ...doc.data() 
+        });
       });
       setMembers(membersList);
       setLoadingMembers(false);
+      console.log('Loaded members with document IDs:', membersList.length);
     } catch (error) {
       console.error('Error loading members:', error);
       setLoadingMembers(false);

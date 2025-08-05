@@ -11,6 +11,7 @@ import {
   doc, 
   setDoc 
 } from 'firebase/firestore';
+import { shareRoster } from '../firebase/auth-firestore';
 
 function ManageRosters() {
   const { user } = useUser();
@@ -19,6 +20,15 @@ function ManageRosters() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredRosters, setFilteredRosters] = useState([]);
+  const [notification, setNotification] = useState(null);
+
+  // Show auto-dismissing notification
+  const showNotification = (message, type = 'success') => {
+    setNotification({ message, type });
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000); // Auto-dismiss after 3 seconds
+  };
 
   // Load rosters when component mounts
   useEffect(() => {
@@ -130,7 +140,7 @@ function ManageRosters() {
     if (confirmDelete) {
       try {
         await deleteDoc(doc(db, 'rosters', roster.rosterId));
-        alert('Roster deleted successfully!');
+        showNotification('Roster deleted successfully!');
         loadRosters(); // Reload the list
       } catch (error) {
         console.error('Error deleting roster:', error);
@@ -169,11 +179,32 @@ function ManageRosters() {
       
       // Save the copy using the new rosterId as the document ID
       await setDoc(doc(db, 'rosters', newRosterId), copiedRoster);
-      alert('Roster copied successfully!');
+      showNotification('Roster copied successfully!');
       loadRosters(); // Reload the list
     } catch (error) {
       console.error('Error copying roster:', error);
       alert('Error copying roster. Please try again.');
+    }
+  };
+
+  // Handle share button
+  const handleShare = async (roster) => {
+    try {
+      const shareData = await shareRoster(roster, user.MID, user.username);
+      
+      if (shareData && shareData.success && shareData.shareId) {
+        // Create the shareable URL
+        const shareUrl = `${window.location.origin}/shared/${shareData.shareId}`;
+        
+        // Copy to clipboard
+        await navigator.clipboard.writeText(shareUrl);
+        showNotification('Share link copied to clipboard!');
+      } else {
+        alert('Error creating share link. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sharing roster:', error);
+      alert('Error creating share link. Please try again.');
     }
   };
 
@@ -198,8 +229,32 @@ function ManageRosters() {
     }
   };
 
+  console.log('ManageRosters component rendering', { user, loading });
+
   return (
     <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+      {/* Notification Toast */}
+      {notification && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          backgroundColor: notification.type === 'success' ? '#28a745' : '#dc3545',
+          color: 'white',
+          padding: '12px 20px',
+          borderRadius: '6px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          zIndex: 10000,
+          fontSize: '14px',
+          fontWeight: '500',
+          maxWidth: '300px',
+          transform: 'translateX(0)',
+          transition: 'all 0.3s ease-out'
+        }}>
+          {notification.message}
+        </div>
+      )}
+      
       {/* Back Link */}
       <div style={{ marginBottom: '20px' }}>
         <Link to={`/${user.MID}/admin`} style={{ color: '#3498db', textDecoration: 'none' }}>
@@ -212,26 +267,61 @@ function ManageRosters() {
       
       {/* Search Box */}
       <div style={{ marginBottom: '30px' }}>
-        <input
-          type="text"
-          placeholder="Search rosters by title or author..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          style={{
-            width: '100%',
-            maxWidth: '400px',
-            padding: '12px 16px',
-            fontSize: '16px',
-            border: '2px solid #dee2e6',
-            borderRadius: '8px',
-            backgroundColor: '#fff',
-            color: '#333',
-            outline: 'none',
-            transition: 'border-color 0.2s ease'
-          }}
-          onFocus={(e) => e.target.style.borderColor = '#007bff'}
-          onBlur={(e) => e.target.style.borderColor = '#dee2e6'}
-        />
+        <div style={{ 
+          display: 'flex', 
+          gap: '10px', 
+          alignItems: 'center',
+          maxWidth: '500px'
+        }}>
+          <input
+            type="text"
+            placeholder="Search rosters by title or author..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            style={{
+              flex: '1',
+              padding: '12px 16px',
+              fontSize: '16px',
+              border: '2px solid #dee2e6',
+              borderRadius: '8px',
+              backgroundColor: '#fff',
+              color: '#333',
+              outline: 'none',
+              transition: 'border-color 0.2s ease'
+            }}
+            onFocus={(e) => e.target.style.borderColor = '#007bff'}
+            onBlur={(e) => e.target.style.borderColor = '#dee2e6'}
+          />
+          <button
+            onClick={loadRosters}
+            style={{
+              padding: '12px 16px',
+              fontSize: '20px',
+              border: 'none',
+              borderRadius: '6px',
+              backgroundColor: 'transparent',
+              color: '#666',
+              cursor: 'pointer',
+              outline: 'none',
+              transition: 'all 0.2s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minWidth: '50px'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.color = '#333';
+              e.target.style.transform = 'scale(1.1)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.color = '#666';
+              e.target.style.transform = 'scale(1)';
+            }}
+            title="Refresh roster list"
+          >
+            🔄
+          </button>
+        </div>
         <div style={{ 
           height: '22px',
           marginTop: '8px',
@@ -438,6 +528,24 @@ function ManageRosters() {
                   }}
                 >
                   Copy
+                </button>
+
+                {/* Share Button */}
+                <button
+                  onClick={() => handleShare(roster)}
+                  style={{
+                    flex: 1,
+                    background: '#17a2b8',
+                    color: 'white',
+                    border: 'none',
+                    padding: '8px 12px',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: '12px',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  🔗
                 </button>
               </div>
             </div>

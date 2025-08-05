@@ -30,6 +30,8 @@ function CreateRoster() {
   });
   const [draggedEntryIndex, setDraggedEntryIndex] = useState(null);
   const [rosterId, setRosterId] = useState(null); // Track if editing existing roster
+  const [currentPage, setCurrentPage] = useState(1);
+  const ENTRIES_PER_PAGE = 20;
 
   // Load roster data if editing
   useEffect(() => {
@@ -347,7 +349,20 @@ function CreateRoster() {
       newEntry[field.label] = entryValues[field.id] || '';
     });
     
-    setRosterEntries(prev => [...prev, newEntry]);
+    setRosterEntries(prev => {
+      const newEntries = [...prev, newEntry];
+      
+      // Check if we need to navigate to a new page
+      const totalPages = Math.ceil(newEntries.length / ENTRIES_PER_PAGE);
+      const entryPage = Math.ceil(newEntries.length / ENTRIES_PER_PAGE);
+      
+      // If this entry goes on a new page, navigate to that page
+      if (entryPage > currentPage) {
+        setCurrentPage(entryPage);
+      }
+      
+      return newEntries;
+    });
     
     // Clear entry values for next entry
     setEntryValues({});
@@ -356,7 +371,47 @@ function CreateRoster() {
   };
 
   const deleteEntry = (index) => {
-    setRosterEntries(prev => prev.filter((_, i) => i !== index));
+    setRosterEntries(prev => {
+      const newEntries = prev.filter((_, i) => i !== index);
+      
+      // Check if we need to navigate to a previous page
+      const totalPages = Math.ceil(newEntries.length / ENTRIES_PER_PAGE);
+      if (currentPage > totalPages && totalPages > 0) {
+        setCurrentPage(totalPages);
+      } else if (newEntries.length === 0) {
+        setCurrentPage(1);
+      }
+      
+      return newEntries;
+    });
+  };
+
+  // Pagination functions
+  const getCurrentPageEntries = () => {
+    const startIndex = (currentPage - 1) * ENTRIES_PER_PAGE;
+    const endIndex = startIndex + ENTRIES_PER_PAGE;
+    return rosterEntries.slice(startIndex, endIndex);
+  };
+
+  const getTotalPages = () => {
+    return Math.ceil(rosterEntries.length / ENTRIES_PER_PAGE);
+  };
+
+  const goToPage = (page) => {
+    setCurrentPage(page);
+  };
+
+  const goToPrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const goToNextPage = () => {
+    const totalPages = getTotalPages();
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const editEntry = (index) => {
