@@ -5,7 +5,7 @@ import { useUser } from '../context/UserContext';
 import { db } from '../firebase/config';
 import CONFIG from '../config/constants';
 import { collection, query, where, getDocs, doc, updateDoc, onSnapshot, serverTimestamp, deleteField } from 'firebase/firestore';
-// import DevAdminPanel from './DevAdminPanel';
+// ...existing code...
 
 // PlayerNameSelector component for enhanced player selection
 function PlayerNameSelector({ value, onChange, weaponName, entryIndex, getMembersForWeapon, getAvailableMembers, customStyle = {} }) {
@@ -1997,7 +1997,7 @@ function SharedRoster() {
       )}
 
       {/* Developer Panel */}
-      {/* <DevAdminPanel /> */}
+      {/* DevAdminPanel removed: not used in production */}
     </div>
   );
 }
